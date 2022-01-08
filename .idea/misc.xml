@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/yongl/HomeRecipe/app/src/main/res/layout/activity_main.xml" value="0.12234042553191489" />
+        <entry key="..\:/Users/yongl/HomeRecipe/app/src/main/res/layout/activity_create.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/yongl/HomeRecipe/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/yongl/HomeRecipe/app/src/main/res/layout/activity_menu.xml" value="0.12234042553191489" />
       </map>
     </option>
   </component>

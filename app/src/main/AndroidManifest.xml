@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeRecipe">
         <activity
+            android:name=".view.StepActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.CreateActivity"
+            android:exported="false"
+            android:label="Create Recipe Step 1" />
+        <activity
+            android:name=".view.MenuActivity"
+            android:exported="false"
+            android:label="Main Menu" />
+        <activity
             android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>

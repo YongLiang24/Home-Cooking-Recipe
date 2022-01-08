@@ -13,12 +13,15 @@ public class RecipeEntity {
 
     private String recipeName;
     private int PrepTime;
-    private Timestamp createdTime;
+    private String createdTime;
 
-    public RecipeEntity(String recipeName, int prepTime, Timestamp createdTime) {
+    public RecipeEntity(String recipeName, int prepTime, String createdTime) {
         this.recipeName = recipeName;
         PrepTime = prepTime;
         this.createdTime = createdTime;
+    }
+
+    public RecipeEntity() {
     }
 
     public int getId() {
@@ -33,9 +36,6 @@ public class RecipeEntity {
         return PrepTime;
     }
 
-    public Timestamp getCreatedTime() {
-        return createdTime;
-    }
 
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
@@ -45,7 +45,15 @@ public class RecipeEntity {
         PrepTime = prepTime;
     }
 
-    public void setCreatedTime(Timestamp createdTime) {
+    public String getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
