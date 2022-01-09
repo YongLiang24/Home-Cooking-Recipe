@@ -57,6 +57,20 @@ public class Repository {
         return mThisStep;
     }
 
+    //get filter steps by id.
+    public List<StepEntity> getFilterSteps(int id){
+        databaseExecutor.execute(()->{
+            mAllSteps=mStepDao.getFilterSteps(id);
+        });
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return mAllSteps;
+    }
+
     //insert step
     public void insert(StepEntity step){
         databaseExecutor.execute(()->{

@@ -29,4 +29,5 @@ public interface RecipeDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     long insertRecipe(RecipeEntity recipe);
 
+
 }

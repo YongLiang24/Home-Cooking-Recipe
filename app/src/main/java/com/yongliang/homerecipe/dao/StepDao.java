@@ -25,4 +25,7 @@ public interface StepDao {
 
     @Query("SELECT * FROM step_table WHERE id= :id")
     StepEntity getThisStep(int id);
+
+    @Query("SELECT * FROM step_table WHERE recipe_id= :id")
+    List<StepEntity> getFilterSteps(int id);
 }
