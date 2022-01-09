@@ -162,4 +162,20 @@ public class Repository {
         }
     }
 
+    //insert with return ID
+    public long insertRecipe(RecipeEntity recipe){
+        final long[] rowid = new long[1];
+        databaseExecutor.execute(()->{
+           rowid[0] = mRecipeDao.insertRecipe(recipe);
+        });
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return rowid[0];
+    }
+
 }

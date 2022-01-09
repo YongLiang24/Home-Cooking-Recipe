@@ -74,4 +74,16 @@ public class StepEntity {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "StepEntity{" +
+                "id=" + id +
+                ", recipe_id=" + recipe_id +
+                ", cookingTool='" + cookingTool + '\'' +
+                ", cookingMethod='" + cookingMethod + '\'' +
+                ", cookTime=" + cookTime +
+                ", ingredient='" + ingredient + '\'' +
+                '}';
+    }
 }

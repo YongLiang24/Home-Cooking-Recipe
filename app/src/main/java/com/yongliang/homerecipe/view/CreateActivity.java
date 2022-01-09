@@ -29,7 +29,6 @@ public class CreateActivity extends AppCompatActivity {
         //navigation bar
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         recipeName=findViewById(R.id.NameInput);
         prepTime=0;
 
@@ -50,14 +49,17 @@ public class CreateActivity extends AppCompatActivity {
         //validates empty entries and empty white spaces
         if(recipeName.getText().toString().trim().isEmpty()){
             Toast.makeText(getApplicationContext(),"Recipe name can not be empty.",Toast.LENGTH_LONG).show();
-            Repository repo = new Repository(getApplication());
-            System.out.println(repo.getAllRecipes());
         }
         else{
+            //create a new recipe with ID returned
             Repository repo = new Repository(getApplication());
             createdTime =new Timestamp(System.currentTimeMillis());
             RecipeEntity recipe= new RecipeEntity(recipeName.getText().toString(), prepTime, createdTime.toString());
-            repo.insert(recipe);
+            int newRecipeID =(int)repo.insertRecipe(recipe);
+            //navigate to next page with recipeID.
+            Intent intent = new Intent(CreateActivity.this, StepActivity.class);
+            intent.putExtra("recipeID", newRecipeID);
+            startActivity(intent);
         }
     }
 }

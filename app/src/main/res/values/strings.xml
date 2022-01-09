@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">HomeRecipe</string>
+
+    <string-array name="equip_spinner">
+        <item>Stove Top</item>
+        <item>Grilling Basket</item>
+        <item>Oven</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="stove_method">
+        <item>Stir Fry</item>
+        <item>Steaming</item>
+        <item>Searing</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="grill_method">
+        <item>grill</item>
+        <item>BBQ</item>
+    </string-array>
+
+    <string-array name="Oven_method">
+        <item>Bake</item>
+        <item>Broil</item>
+    </string-array>
+
+    <string-array name="other_method">
+        <item>Others</item>
+    </string-array>
+
 </resources>

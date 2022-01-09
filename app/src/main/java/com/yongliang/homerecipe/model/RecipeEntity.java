@@ -56,4 +56,14 @@ public class RecipeEntity {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "RecipeEntity{" +
+                "id=" + id +
+                ", recipeName='" + recipeName + '\'' +
+                ", PrepTime=" + PrepTime +
+                ", createdTime='" + createdTime + '\'' +
+                '}';
+    }
 }

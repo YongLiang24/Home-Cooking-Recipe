@@ -26,4 +26,7 @@ public interface RecipeDao {
     @Query("SELECT * FROM recipe_table WHERE id= :id")
     RecipeEntity getThisRecipe(int id);
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    long insertRecipe(RecipeEntity recipe);
+
 }
