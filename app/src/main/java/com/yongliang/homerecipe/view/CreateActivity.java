@@ -19,7 +19,7 @@ import java.util.Objects;
 public class CreateActivity extends AppCompatActivity {
     EditText recipeName;
     Timestamp createdTime;
-    int prepTime;
+    int prepTime=0;
 
 
     @Override
@@ -30,7 +30,6 @@ public class CreateActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         recipeName=findViewById(R.id.NameInput);
-        prepTime=0;
 
     }
     //Return home arrow button

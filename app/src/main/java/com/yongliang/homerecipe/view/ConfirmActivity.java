@@ -50,6 +50,12 @@ public class ConfirmActivity extends AppCompatActivity {
     }
 
     public void finishRecipe(View view) {
+        int totalPrepTime=0;
+        for(StepEntity step : listFilterStep){
+            totalPrepTime += step.getCookTime();
+        }
+        thisRecipe.setPrepTime(totalPrepTime);
+        repo.update(thisRecipe);
         Intent intent = new Intent(ConfirmActivity.this, MenuActivity.class);
         Toast.makeText(getApplicationContext(),"Recipe ("+thisRecipe.getRecipeName()+") was created.",Toast.LENGTH_LONG).show();
         startActivity(intent);

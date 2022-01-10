@@ -41,8 +41,6 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
                 }
             });
         }
-
-
     }
 
     private List<StepEntity> mSteps;
@@ -64,7 +62,6 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull StepViewHolder holder, int position) {
-
         if(mSteps != null){
             StepEntity current = mSteps.get(position);
             holder.stepEqip.setText("Cooking Tool: "+current.getCookingTool());

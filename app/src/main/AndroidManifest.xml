@@ -10,9 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeRecipe">
         <activity
+            android:name=".view.DetailedRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ViewRecipeActivity"
+            android:exported="false"
+            android:label="Recipe List" />
+        <activity
             android:name=".view.ConfirmActivity"
             android:exported="false"
-            android:label="Confirmation"/>
+            android:label="Confirmation" />
         <activity
             android:name=".view.StepActivity"
             android:exported="false"
