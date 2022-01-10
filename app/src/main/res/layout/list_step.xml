@@ -2,20 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
     <TextView
         android:id="@+id/stepEquip_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="TextView"/>
 
     <TextView
         android:id="@+id/stepMethod_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="TextView"/>
 
     <TextView
         android:id="@+id/stepTime_"
@@ -23,21 +24,20 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:inputType="number"
-        android:text="TextView" />
+        android:text="TextView"/>
 
     <TextView
         android:id="@+id/stepIngredient_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/teal_700"/>
 
-
-
-    <View
-        android:background="#090909"
-        android:layout_width ="match_parent"
-        android:layout_height="1dp"/>
+<!--    <View-->
+<!--        android:background="#090909"-->
+<!--        android:layout_width ="match_parent"-->
+<!--        android:layout_height="1dp"/>-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

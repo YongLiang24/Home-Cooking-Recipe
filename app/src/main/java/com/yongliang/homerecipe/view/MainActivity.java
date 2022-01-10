@@ -17,12 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Repository repo = new Repository(getApplication());
-
-
-        System.out.println(repo.getAllSteps());
-        System.out.println(repo.getAllRecipes());
-
-
     }
 
     public void startApp(View view) {

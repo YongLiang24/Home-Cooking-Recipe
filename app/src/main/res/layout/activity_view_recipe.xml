@@ -12,6 +12,8 @@
         android:id="@+id/RecipeRecycler"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="10dp"
+        android:paddingBottom="10dp"
+
         />
 
 

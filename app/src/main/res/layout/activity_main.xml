@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/ic_baseline_menu_book_24"
         tools:layout_editor_absoluteX="341dp"
         tools:layout_editor_absoluteY="383dp"
@@ -22,7 +22,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter"
+        android:text="    Enter    "
         android:onClick="startApp"
         tools:layout_editor_absoluteX="158dp"
         tools:layout_editor_absoluteY="587dp"
