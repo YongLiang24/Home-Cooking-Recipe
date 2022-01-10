@@ -22,14 +22,14 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
     class StepViewHolder extends RecyclerView.ViewHolder{
         private final TextView stepEqip;
         private final TextView stepMethod;
-        //private final TextView stepTime;
+        private final TextView stepTime;
         private final TextView stepIngredient;
         //constructor
         private StepViewHolder(View stepView){
             super (stepView);
             stepEqip = stepView.findViewById(R.id.stepEquip_);
             stepMethod = stepView.findViewById(R.id.stepMethod_);
-            //stepTime = stepView.findViewById(R.id.stepTime_);
+            stepTime = stepView.findViewById(R.id.stepTime_);
             stepIngredient = stepView.findViewById(R.id.stepIngredient_);
 
             stepView.setOnClickListener(new View.OnClickListener(){
@@ -38,13 +38,6 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
                 public void onClick(View view) {
                     int position = getAdapterPosition();
                     final StepEntity current= mSteps.get(position);
-//                    //to next screen
-//                    Intent intent = new Intent(context, AssessmentActivity.class);
-//                    //pass extra course data to the next screen
-//                    intent.putExtra("course_id", current.getId());
-//
-//
-//                    context.startActivity(intent);
                 }
             });
         }
@@ -76,8 +69,9 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
             StepEntity current = mSteps.get(position);
             holder.stepEqip.setText("Cooking Tool: "+current.getCookingTool());
             holder.stepMethod.setText("Cooking Method: "+current.getCookingMethod());
-            //holder.stepTime.setText(current.getCookTime());
-            holder.stepIngredient.setText("Cooking Step"+current.getIngredient());
+            String tempTime =String.valueOf(current.getCookTime()+ " minutes");
+            holder.stepTime.setText("Cook Time: "+tempTime);
+            holder.stepIngredient.setText("Cooking Step: "+current.getIngredient());
         }
         else{
             holder.stepEqip.setText("no steps added");
