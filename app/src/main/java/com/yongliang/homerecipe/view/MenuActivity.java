@@ -48,5 +48,13 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void reportRecipe(View view) {
+        Intent intent = new Intent(MenuActivity.this, ReportActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

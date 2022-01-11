@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeRecipe">
         <activity
+            android:name=".view.ReportActivity"
+            android:exported="false"
+            android:label="Report"/>
+        <activity
             android:name=".view.UpdateRecipeActivity"
             android:exported="false" />
         <activity
