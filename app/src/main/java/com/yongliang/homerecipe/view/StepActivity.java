@@ -123,13 +123,19 @@ public class StepActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Please fill all fields before completing step",Toast.LENGTH_LONG).show();
         }
         else{
-            int ckt = Integer.parseInt(ckTime);
-            StepEntity ste = new StepEntity(rep_id, toolSpin, methodSpin, ckt, ing);
-            repo.insert(ste);
-
-            Intent intent = new Intent(StepActivity.this, ConfirmActivity.class);
-            intent.putExtra("recipeID", rep_id);
-            startActivity(intent);
+        //handle the NumberFormatException for number input.
+            try{
+                int ckt = Integer.parseInt(ckTime);
+                StepEntity ste = new StepEntity(rep_id, toolSpin, methodSpin, ckt, ing);
+                repo.insert(ste);
+                Intent intent = new Intent(StepActivity.this, ConfirmActivity.class);
+                intent.putExtra("recipeID", rep_id);
+                startActivity(intent);
+            }
+            catch(NumberFormatException e){
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(),"Please enter whole numbers for cook time and avoid comma (,) and period(.) symbols.",Toast.LENGTH_LONG).show();
+            }
 
         }
     }

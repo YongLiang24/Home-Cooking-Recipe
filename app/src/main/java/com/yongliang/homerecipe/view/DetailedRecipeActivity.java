@@ -115,5 +115,10 @@ public class DetailedRecipeActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(DetailedRecipeActivity.this, ViewRecipeActivity.class);
+        startActivity(intent);
+    }
 
 }

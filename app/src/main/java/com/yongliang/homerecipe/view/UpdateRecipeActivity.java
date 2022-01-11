@@ -66,18 +66,20 @@ public class UpdateRecipeActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Please make valid input and avoid empty entries.",Toast.LENGTH_LONG).show();
         }
         else{
-
-            recipeObj.setRecipeName(editName.getText().toString());
-            recipeObj.setPrepTime(Integer.parseInt(editTime.getText().toString()));
-            repo.update(recipeObj);
-            Intent intent = new Intent(UpdateRecipeActivity.this, DetailedRecipeActivity.class);
-            intent.putExtra("recipeID", recipeID);
-            Toast.makeText(getApplicationContext(),"Recipe Updated",Toast.LENGTH_LONG).show();
-            startActivity(intent);
-
+            //handle the NumberFormatException for number input.
+            try{
+                recipeObj.setRecipeName(editName.getText().toString());
+                recipeObj.setPrepTime(Integer.parseInt(editTime.getText().toString()));
+                repo.update(recipeObj);
+                Intent intent = new Intent(UpdateRecipeActivity.this, DetailedRecipeActivity.class);
+                intent.putExtra("recipeID", recipeID);
+                Toast.makeText(getApplicationContext(),"Recipe Updated",Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+            catch(NumberFormatException e){
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(),"Please enter whole numbers for cook time and avoid comma (,) and period(.) symbols.",Toast.LENGTH_LONG).show();
+            }
         }
-
-
-
     }
 }

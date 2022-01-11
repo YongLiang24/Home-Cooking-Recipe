@@ -61,4 +61,10 @@ public class CreateActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(CreateActivity.this, MenuActivity.class);
+        startActivity(intent);
+    }
 }

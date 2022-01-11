@@ -50,4 +50,10 @@ public class ViewRecipeActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ViewRecipeActivity.this, MenuActivity.class);
+        startActivity(intent);
+    }
 }
