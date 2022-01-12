@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeRecipe">
         <activity
+            android:name=".view.SearchActivity"
+            android:exported="false"
+            android:label="Search"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
             android:name=".view.ReportActivity"
             android:exported="false"
-            android:label="Report"/>
+            android:label="Report" />
         <activity
             android:name=".view.UpdateRecipeActivity"
             android:exported="false" />
@@ -31,11 +36,13 @@
         <activity
             android:name=".view.StepActivity"
             android:exported="false"
-            android:label="Step Instructions" />
+            android:label="Step Instructions"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".view.CreateActivity"
             android:exported="false"
-            android:label="Create Recipe" />
+            android:label="Create Recipe"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".view.MenuActivity"
             android:exported="false"

@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.yongliang.homerecipe.R;
 import com.yongliang.homerecipe.database.Repository;
 import com.yongliang.homerecipe.model.RecipeEntity;
+import com.yongliang.homerecipe.utility.HideSoftKeyboard;
+import com.yongliang.homerecipe.utility.InputValidation;
+import com.yongliang.homerecipe.utility.ToastMessage;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -43,11 +45,14 @@ public class CreateActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+//recipeName.getText().toString().trim().isEmpty() &&
     public void nextPage(View view) {
         //validates empty entries and empty white spaces
-        if(recipeName.getText().toString().trim().isEmpty()){
-            Toast.makeText(getApplicationContext(),"Recipe name can not be empty.",Toast.LENGTH_LONG).show();
+        if(!InputValidation.isAlphabetOnly(recipeName.getText().toString())){
+            //hide keyboard
+            View v = this.getCurrentFocus();
+            HideSoftKeyboard.hideKeyboard(this, v);
+            ToastMessage.showToast(this, "Recipe name can not be empty and must be alphabet only" );
         }
         else{
             //create a new recipe with ID returned

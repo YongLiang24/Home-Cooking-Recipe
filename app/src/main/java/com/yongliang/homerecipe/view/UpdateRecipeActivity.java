@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.yongliang.homerecipe.R;
 import com.yongliang.homerecipe.database.Repository;
 import com.yongliang.homerecipe.model.RecipeEntity;
+import com.yongliang.homerecipe.utility.HideSoftKeyboard;
+import com.yongliang.homerecipe.utility.InputValidation;
 
 import java.util.Objects;
 
@@ -62,7 +64,9 @@ public class UpdateRecipeActivity extends AppCompatActivity {
     }
 
     public void saveUpdate(View view) {
-        if(editTime.getText().toString().trim().isEmpty() || editName.getText().toString().trim().isEmpty()){
+        if(!InputValidation.isNumberOnly(editTime.getText().toString()) || !InputValidation.isAlphabetOnly(editName.getText().toString())){
+            View v = this.getCurrentFocus();
+            HideSoftKeyboard.hideKeyboard(this, v);
             Toast.makeText(getApplicationContext(),"Please make valid input and avoid empty entries.",Toast.LENGTH_LONG).show();
         }
         else{
@@ -78,6 +82,8 @@ public class UpdateRecipeActivity extends AppCompatActivity {
             }
             catch(NumberFormatException e){
                 e.printStackTrace();
+                View v = this.getCurrentFocus();
+                HideSoftKeyboard.hideKeyboard(this, v);
                 Toast.makeText(getApplicationContext(),"Please enter whole numbers for cook time and avoid comma (,) and period(.) symbols.",Toast.LENGTH_LONG).show();
             }
         }

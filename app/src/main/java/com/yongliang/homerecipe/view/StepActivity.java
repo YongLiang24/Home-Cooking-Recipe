@@ -22,6 +22,8 @@ import com.yongliang.homerecipe.polymorphism.GrillingBasket;
 import com.yongliang.homerecipe.polymorphism.OtherTool;
 import com.yongliang.homerecipe.polymorphism.Oven;
 import com.yongliang.homerecipe.polymorphism.StoveTop;
+import com.yongliang.homerecipe.utility.InputValidation;
+import com.yongliang.homerecipe.utility.ToastMessage;
 
 public class StepActivity extends AppCompatActivity {
     int recipeID;
@@ -119,8 +121,8 @@ public class StepActivity extends AppCompatActivity {
         String methodSpin = methodSpinner.getSelectedItem().toString();
         int rep_id=recipeID;
         //validate inputs
-        if(ckTime.trim().isEmpty() || ing.trim().isEmpty()){
-            Toast.makeText(getApplicationContext(),"Please fill all fields before completing step",Toast.LENGTH_LONG).show();
+        if(ckTime.trim().isEmpty() || !InputValidation.isAlphanumeric(ing)){
+            ToastMessage.showToast(this,"Please fill all fields before completing step");
         }
         else{
         //handle the NumberFormatException for number input.

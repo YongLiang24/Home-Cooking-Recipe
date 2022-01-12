@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="*Use the 3 dots dropdown menu for more options"
+            android:text="*To Update/Delete - Use the 3 dots menu."
             android:layout_marginBottom="8dp"
             android:textColor="@color/teal_700"
             />

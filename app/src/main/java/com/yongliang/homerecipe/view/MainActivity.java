@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.yongliang.homerecipe.R;
 import com.yongliang.homerecipe.database.Repository;
 import com.yongliang.homerecipe.polymorphism.CookingTool;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,4 +26,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MenuActivity.class);
         startActivity(intent);
     }
+    //exit the program
+    @Override
+    public void onBackPressed() {
+        this.finishAffinity();
+    }
+
 }
