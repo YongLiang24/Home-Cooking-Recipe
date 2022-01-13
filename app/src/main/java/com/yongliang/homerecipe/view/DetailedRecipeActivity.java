@@ -61,7 +61,7 @@ public class DetailedRecipeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case android.R.id.home:
-                Intent intent = new Intent(DetailedRecipeActivity.this, ViewRecipeActivity.class);
+                Intent intent = new Intent(DetailedRecipeActivity.this, MenuActivity.class);
                 startActivity(intent);
                 return true;
 
@@ -117,7 +117,7 @@ public class DetailedRecipeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(DetailedRecipeActivity.this, ViewRecipeActivity.class);
+        Intent intent = new Intent(DetailedRecipeActivity.this, MenuActivity.class);
         startActivity(intent);
     }
 
