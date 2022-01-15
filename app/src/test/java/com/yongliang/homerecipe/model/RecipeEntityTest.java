@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 public class RecipeEntityTest {
     RecipeEntity recipe = new RecipeEntity();
 
+
     @Test
     public void getId() {
         recipe.setId(12);
