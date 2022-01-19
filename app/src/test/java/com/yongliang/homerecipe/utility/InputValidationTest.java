@@ -1,9 +1,6 @@
 package com.yongliang.homerecipe.utility;
 
 import static org.junit.Assert.*;
-
-import android.renderscript.ScriptGroup;
-
 import org.junit.Test;
 
 //The purpose of these unit tests is to verify the validation methods function correctly.

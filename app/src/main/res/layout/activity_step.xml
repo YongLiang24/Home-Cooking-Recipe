@@ -121,7 +121,7 @@
             android:id="@+id/cookingStep"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
+            android:inputType="text"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
